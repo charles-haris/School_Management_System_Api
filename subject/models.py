@@ -11,6 +11,7 @@ class Subject(models.Model):
     subject_code = models.CharField(max_length=10, unique=True)
     subject_name = models.CharField(max_length=100)
     description = models.TextField(blank=True)
+    credits = models.IntegerField(default=1)
     department = models.ForeignKey(Department, on_delete =models.CASCADE)
     is_mandatory = models.BooleanField(default=True)
     status = models.CharField(max_length=10, choices=Status, default=Status.ACTIVE)
